@@ -1,4 +1,4 @@
-package com.dranoer.oweme
+package com.dranoer.oweme.expenses
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
