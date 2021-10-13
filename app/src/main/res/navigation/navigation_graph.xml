@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/navigation_expense"
+    android:id="@+id/expense_navigation">
+
+    <fragment
+        android:id="@+id/navigation_expense"
+        android:name="com.dranoer.oweme.expenses.ExpenseFragment"
+        android:label="@string/title_expense"
+        tools:layout="@layout/fragment_expense" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.dranoer.oweme.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

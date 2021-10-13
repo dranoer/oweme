@@ -1,4 +1,4 @@
-package com.dranoer.oweme.expenses
+package com.dranoer.oweme.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.dranoer.oweme.databinding.FragmentExpenseBinding
+import com.dranoer.oweme.databinding.FragmentProfileBinding
 
-class ExpenseFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
-    private lateinit var expenseViewModel: ExpenseViewModel
-    private var _binding: FragmentExpenseBinding? = null
+    private lateinit var expenseViewModel: ProfileViewModel
+    private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -20,9 +20,9 @@ class ExpenseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        expenseViewModel = ViewModelProvider(this).get(ExpenseViewModel::class.java)
+        expenseViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
 
-        _binding = FragmentExpenseBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         return root
