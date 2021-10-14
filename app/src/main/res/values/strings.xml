@@ -5,5 +5,9 @@
     <string name="title_log">Log</string>
     <string name="expenses">EXPENSES</string>
     <string name="expense_subtitle">You have 3 expense groups so far</string>
-    <string name="add_expense">add_expense</string>
+    <string name="add_expense">add expense</string>
+
+    <string name="hint_expense">type a new expense</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Expense not saved because it is empty.</string>
 </resources>
