@@ -9,7 +9,7 @@ data class Expense(
     @PrimaryKey @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "totalCost") val totalCost: Int,
     @ColumnInfo(name = "userCost") val userCost: Int,
-    @ColumnInfo(name = "peopleList") val peopleList: List<String>,
+//    @ColumnInfo(name = "peopleList") val peopleList: List<String>,
 )
 
 val mockExpenses = listOf(
@@ -17,18 +17,18 @@ val mockExpenses = listOf(
         title = "Personal",
         userCost = 100,
         totalCost = 100,
-        peopleList = listOf("Nazi")
+//        peopleList = listOf("Nazi")
     ),
     Expense(
         title = "House",
         userCost = 250,
         totalCost = 800,
-        peopleList = listOf("Nazi", "Al")
+//        peopleList = listOf("Nazi", "Al")
     ),
     Expense(
         title = "Weekend",
         userCost = 700,
         totalCost = 2000,
-        peopleList = listOf("Nazi", "Al", "Shahin")
+//        peopleList = listOf("Nazi", "Al", "Shahin")
     ),
 )
