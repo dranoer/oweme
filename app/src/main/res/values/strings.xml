@@ -5,4 +5,5 @@
     <string name="title_log">Log</string>
     <string name="expenses">EXPENSES</string>
     <string name="expense_subtitle">You have 3 expense groups so far</string>
+    <string name="add_expense">add_expense</string>
 </resources>
