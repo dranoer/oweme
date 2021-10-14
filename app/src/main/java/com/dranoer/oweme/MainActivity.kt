@@ -13,6 +13,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         setupNavigationMenu(navController)
 
-//        setupBottomNavMenu(navController)
+        setupBottomNavMenu(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val dest: String = try {
@@ -58,10 +59,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    private fun setupBottomNavMenu(navController: NavController) {
-//        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
-//        bottomNav?.setupWithNavController(navController)
-//    }
+    private fun setupBottomNavMenu(navController: NavController) {
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+        bottomNav?.setupWithNavController(navController)
+    }
 
     private fun setupNavigationMenu(navController: NavController) {
         val sideNavView = findViewById<NavigationView>(R.id.nav_view)
