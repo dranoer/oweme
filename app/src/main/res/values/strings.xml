@@ -3,4 +3,6 @@
     <string name="title_expense">Expenses</string>
     <string name="title_profile">Profile</string>
     <string name="title_log">Log</string>
+    <string name="expenses">EXPENSES</string>
+    <string name="expense_subtitle">You have 3 expense groups so far</string>
 </resources>
