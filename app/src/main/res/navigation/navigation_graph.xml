@@ -2,18 +2,69 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@+id/navigation_expense"
-    android:id="@+id/expense_navigation">
+    app:startDestination="@+id/home_dest">
+    <fragment
+        android:id="@+id/home_dest"
+        android:name="com.dranoer.oweme.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/home_fragment">
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@+id/flow_step_one_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_expense"
-        android:name="com.dranoer.oweme.expenses.ExpenseFragment"
-        android:label="@string/title_expense"
-        tools:layout="@layout/fragment_expense" />
+        android:id="@+id/flow_step_one_dest"
+        android:name="com.dranoer.oweme.FlowStepFragment"
+        tools:layout="@layout/flow_step_one_fragment">
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@+id/flow_step_two_dest"></action>
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_profile"
-        android:name="com.dranoer.oweme.profile.ProfileFragment"
-        android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/flow_step_two_dest"
+        android:name="com.dranoer.oweme.FlowStepFragment"
+        tools:layout="@layout/flow_step_two_fragment">
+
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="2"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/next_action"
+            app:popUpTo="@id/home_dest"></action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/settings_dest"
+        android:name="com.dranoer.oweme.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/settings_fragment" />
+
+    <fragment
+        android:id="@+id/deeplink_dest"
+        android:name="com.dranoer.oweme.DeepLinkFragment"
+        android:label="@string/deeplink"
+        tools:layout="@layout/deeplink_fragment">
+
+        <argument
+            android:name="myarg"
+            android:defaultValue="Android!" />
+
+        <deepLink app:uri="www.dranoer.com/{myarg}" />
+
+    </fragment>
 </navigation>

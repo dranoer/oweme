@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
-        android:id="@+id/navigation_expense"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="@string/title_expense" />
-
+        android:id="@id/home_dest"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
     <item
-        android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="@string/title_profile" />
+        android:id="@id/deeplink_dest"
+        android:icon="@drawable/ic_android"
+        android:title="@string/deeplink" />
 </menu>
