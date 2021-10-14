@@ -18,14 +18,22 @@ class ExpenseAdapter : ListAdapter<Expense, ExpenseAdapter.ExpenseViewHolder>(EX
 
     override fun onBindViewHolder(holder: ExpenseViewHolder, position: Int) {
         val current = getItem(position)
-        holder.bind(current.title)
+        holder.bind(
+            title = current.title,
+            totalCost = current.totalCost.toString(),
+            userCost = current.userCost.toString()
+        )
     }
 
     class ExpenseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val expenseItemView: TextView = itemView.findViewById(R.id.textView)
+        private val expenseItemView: TextView = itemView.findViewById(R.id.expense_title)
+        private val totalCostItemView: TextView = itemView.findViewById(R.id.expense_total_cost)
+        private val userCostItemView: TextView = itemView.findViewById(R.id.expense_user_cost)
 
-        fun bind(text: String?) {
-            expenseItemView.text = text
+        fun bind(title: String?, totalCost: String?, userCost: String?) {
+            expenseItemView.text = title
+            totalCostItemView.text = totalCost
+            userCostItemView.text = userCost
         }
 
         companion object {
