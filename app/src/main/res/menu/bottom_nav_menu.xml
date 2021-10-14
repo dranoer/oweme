@@ -3,11 +3,11 @@
 
     <item
         android:id="@+id/navigation_expense"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/ic_expenses"
         android:title="@string/title_expense" />
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/ic_log"
         android:title="@string/title_profile" />
 </menu>
