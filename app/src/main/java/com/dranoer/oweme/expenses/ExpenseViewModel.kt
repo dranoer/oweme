@@ -1,12 +1,26 @@
 package com.dranoer.oweme.expenses
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import com.dranoer.oweme.data.model.Expense
+import com.dranoer.oweme.data.repository.ExpenseRepository
+import kotlinx.coroutines.launch
 
-class ExpenseViewModel : ViewModel() {
+class ExpenseViewModel(private val repository: ExpenseRepository) : ViewModel() {
 
-    private val _expenses = MutableLiveData<List<Expense>>()
-    val expense: LiveData<List<Expense>> = _expenses
+    val allExpenses: LiveData<List<Expense>> = repository.allExpenses.asLiveData()
+
+    fun insert(expense: Expense) = viewModelScope.launch {
+        repository.insert(expense)
+    }
+}
+
+class ExpenseViewModelFactory(private val repository: ExpenseRepository) :
+    ViewModelProvider.Factory {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(ExpenseViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return ExpenseViewModel(repository) as T
+        }
+        throw IllegalArgumentException("Unknown viewModel class :(")
+    }
 }
