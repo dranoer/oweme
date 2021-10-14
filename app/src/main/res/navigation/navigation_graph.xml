@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_expense" />
 
     <fragment
-        android:id="@+id/navigation_profile"
-        android:name="com.dranoer.oweme.profile.ProfileFragment"
-        android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/navigation_log"
+        android:name="com.dranoer.oweme.log.LogFragment"
+        android:label="@string/title_log"
+        tools:layout="@layout/fragment_log" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.dranoer.oweme.profile
+package com.dranoer.oweme.log
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.dranoer.oweme.databinding.FragmentProfileBinding
+import com.dranoer.oweme.databinding.FragmentLogBinding
 
-class ProfileFragment : Fragment() {
+class LogFragment : Fragment() {
 
-    private lateinit var profileViewModel: ProfileViewModel
-    private var _binding: FragmentProfileBinding? = null
+    private lateinit var logViewModel: LogViewModel
+    private var _binding: FragmentLogBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -20,9 +20,9 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+        logViewModel = ViewModelProvider(this).get(LogViewModel::class.java)
 
-        _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        _binding = FragmentLogBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         return root
