@@ -1,10 +1,15 @@
-package com.dranoer.oweme.model
+package com.dranoer.oweme.data.model
 
-data class Expense(
-    val title: String,
-    val userCost: Int,
-    val totalCost: Int,
-    val peopleList: List<String>,
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "expense_table")
+class Expense(
+    @PrimaryKey @ColumnInfo(name = "title") val title: String,
+    @ColumnInfo(name = "totalCost") val totalCost: Int,
+    @ColumnInfo(name = "userCost") val userCost: Int,
+    @ColumnInfo(name = "peopleList") val peopleList: List<String>,
 )
 
 val mockExpenses = listOf(
