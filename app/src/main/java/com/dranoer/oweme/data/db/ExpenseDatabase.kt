@@ -27,9 +27,6 @@ abstract class ExpenseDatabase : RoomDatabase() {
                     var expensedDao = database.expenseDao()
 
                     expensedDao.deleteAll()
-
-                    expensedDao.insert(mockExpenses[0])
-                    expensedDao.insert(mockExpenses[1])
                 }
             }
 
