@@ -11,6 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Oweme">
         <activity
+            android:name=".expenditure.ExpenditureActivity"
+            android:exported="true"
+            android:label="@string/title_activity_expenditure"
+            android:theme="@style/Theme.Oweme.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

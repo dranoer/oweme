@@ -5,6 +5,12 @@
     android:id="@+id/expense_navigation"
     app:startDestination="@+id/navigation_expense">
 
+    <activity
+        android:id="@+id/navigation_expenditure_activity"
+        android:name="com.dranoer.oweme.expenditure.ExpenditureActivity"
+        android:label="@string/title_expenditure_activity"
+        tools:layout="@layout/activity_expenditure" />
+
     <fragment
         android:id="@+id/navigation_expense"
         android:name="com.dranoer.oweme.expenses.ExpenseFragment"
@@ -16,4 +22,16 @@
         android:name="com.dranoer.oweme.log.LogFragment"
         android:label="@string/title_log"
         tools:layout="@layout/fragment_log" />
+
+    <fragment
+        android:id="@+id/navigation_expenditure"
+        android:name="com.dranoer.oweme.expenditure.ExpenditureFragment"
+        android:label="@string/title_expenditure"
+        tools:layout="@layout/fragment_expenditure" />
+
+    <dialog
+        android:id="@+id/nevigation_add_expense"
+        android:name="com.dranoer.oweme.expenses.AddExpenseDialog"
+        android:label="@string/title_add_expense"
+        tools:layout="@layout/fragment_new_expense" />
 </navigation>

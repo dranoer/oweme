@@ -37,6 +37,10 @@ class ExpenseFragment : Fragment() {
             expense.let { adapter.submitList(it) }
         }
 
+        binding.addExpense.setOnClickListener {
+            AddExpenseDialog().show(requireActivity().supportFragmentManager, "AddExpenseDialog")
+        }
+
         return root
     }
 
