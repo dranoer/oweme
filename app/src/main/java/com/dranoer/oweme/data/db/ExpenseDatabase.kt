@@ -6,7 +6,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.dranoer.oweme.data.model.Expense
-import com.dranoer.oweme.data.model.mockExpenses
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

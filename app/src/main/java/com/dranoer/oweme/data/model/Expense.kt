@@ -12,23 +12,10 @@ data class Expense(
 //    @ColumnInfo(name = "peopleList") val peopleList: List<String>,
 )
 
-val mockExpenses = listOf(
-    Expense(
-        title = "Personal",
-        userCost = 100,
-        totalCost = 100,
-//        peopleList = listOf("Nazi")
-    ),
-    Expense(
-        title = "House",
-        userCost = 250,
-        totalCost = 800,
-//        peopleList = listOf("Nazi", "Al")
-    ),
-    Expense(
-        title = "Weekend",
-        userCost = 700,
-        totalCost = 2000,
-//        peopleList = listOf("Nazi", "Al", "Shahin")
-    ),
+@Entity(tableName = "expenditure_table")
+data class Expenditure(
+    @PrimaryKey @ColumnInfo(name = "id") val id: Long,
+    @ColumnInfo(name = "title") val title: String,
+    @ColumnInfo(name = "user") val user: String,
+    @ColumnInfo(name = "paid") val paid: Int,
 )
