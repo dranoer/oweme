@@ -1,14 +1,14 @@
 package com.dranoer.oweme.data.db
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.dranoer.oweme.data.model.Expense
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ExpenseDao {
+
+    @Query("SELECT * FROM expense_table WHERE title = :expenseTitle")
+    fun getExpense(expenseTitle: String): Expense
 
     @Query("SELECT * FROM expense_table")
     fun getExpenses(): Flow<List<Expense>>
@@ -18,4 +18,7 @@ interface ExpenseDao {
 
     @Query("DELETE FROM expense_table")
     suspend fun deleteAll()
+
+    @Update
+    suspend fun updateExpense(expense: Expense)
 }

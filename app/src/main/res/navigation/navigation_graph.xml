@@ -9,13 +9,25 @@
         android:id="@+id/navigation_expenditure_activity"
         android:name="com.dranoer.oweme.expenditure.ExpenditureActivity"
         android:label="@string/title_expenditure_activity"
-        tools:layout="@layout/activity_expenditure" />
+        tools:layout="@layout/activity_expenditure" >
+        <argument
+            android:name="expense_title"
+            app:argType="string"/>
+    </activity>
 
     <fragment
         android:id="@+id/navigation_expense"
         android:name="com.dranoer.oweme.expenses.ExpenseFragment"
         android:label="@string/title_expense"
-        tools:layout="@layout/fragment_expense" />
+        tools:layout="@layout/fragment_expense" >
+        <action
+            android:id="@+id/action_add_expense_to_expenditure"
+            app:destination="@id/navigation_expenditure_activity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_log"

@@ -15,4 +15,13 @@ class ExpenseRepository(private val expenseDao: ExpenseDao) {
         expenseDao.insert(expense)
     }
 
+    @WorkerThread
+    suspend fun getExpense(expenseTitle: String) {
+        expenseDao.getExpense(expenseTitle)
+    }
+
+    @WorkerThread
+    suspend fun updateExpense(expense: Expense) {
+        expenseDao.updateExpense(expense)
+    }
 }

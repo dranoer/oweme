@@ -10,7 +10,7 @@ import com.dranoer.oweme.data.model.mockExpenses
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities = arrayOf(Expense::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(Expense::class), version = 1, exportSchema = true)
 abstract class ExpenseDatabase : RoomDatabase() {
 
     abstract fun expenseDao(): ExpenseDao

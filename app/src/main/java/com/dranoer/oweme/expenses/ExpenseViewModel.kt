@@ -12,6 +12,14 @@ class ExpenseViewModel(private val repository: ExpenseRepository) : ViewModel() 
     fun insert(expense: Expense) = viewModelScope.launch {
         repository.insert(expense)
     }
+
+    fun getExpense(expenseTitle: String) = viewModelScope.launch {
+        repository.getExpense(expenseTitle)
+    }
+
+    fun updateExpense(expense: Expense) = viewModelScope.launch {
+        repository.updateExpense(expense)
+    }
 }
 
 class ExpenseViewModelFactory(private val repository: ExpenseRepository) :

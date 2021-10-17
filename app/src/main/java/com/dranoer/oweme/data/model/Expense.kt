@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "expense_table")
 data class Expense(
     @PrimaryKey @ColumnInfo(name = "title") val title: String,
-    @ColumnInfo(name = "totalCost") val totalCost: Int,
-    @ColumnInfo(name = "userCost") val userCost: Int,
+    @ColumnInfo(name = "totalCost") val totalCost: Int?,
+    @ColumnInfo(name = "userCost") val userCost: Int?,
 //    @ColumnInfo(name = "peopleList") val peopleList: List<String>,
 )
 

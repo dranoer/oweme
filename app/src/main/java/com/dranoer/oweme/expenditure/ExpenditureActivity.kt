@@ -1,14 +1,23 @@
 package com.dranoer.oweme.expenditure
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.navArgs
+import com.dranoer.oweme.ExpenseApplication
 import com.dranoer.oweme.R
 import com.dranoer.oweme.databinding.ActivityExpenditureBinding
-import com.google.android.material.snackbar.Snackbar
+import com.dranoer.oweme.expenses.ExpenseViewModel
+import com.dranoer.oweme.expenses.ExpenseViewModelFactory
 
 class ExpenditureActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityExpenditureBinding
+    val args: ExpenditureActivityArgs by navArgs()
+
+    private val expenseViewModel: ExpenseViewModel by viewModels {
+        ExpenseViewModelFactory((application as ExpenseApplication).repository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,10 +26,8 @@ class ExpenditureActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(findViewById(R.id.toolbar))
-        binding.toolbarLayout.title = title
+        binding.toolbarLayout.title = args.expenseTitle
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
         }
     }
 }
