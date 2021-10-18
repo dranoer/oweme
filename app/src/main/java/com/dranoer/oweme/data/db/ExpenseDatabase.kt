@@ -29,9 +29,9 @@ abstract class ExpenseDatabase : RoomDatabase() {
 
                     expensedDao.deleteAll()
 
-                    expensedDao.insertExpenditure(mockExpenditure[0])
-                    expensedDao.insertExpenditure(mockExpenditure[1])
-                    expensedDao.insertExpenditure(mockExpenditure[2])
+                    for (i in 0..9) {
+                        expensedDao.insertExpenditure(mockExpenditure[i])
+                    }
                 }
             }
 
