@@ -27,10 +27,12 @@ class ExpenditureActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         binding.toolbarLayout.title = args.expenseTitle
 
-        val recyclerView = binding.expenditureRecyclerview
+        val recyclerView = binding.recyclerviewLayout.expenditureRecyclerview
         val adapter = ExpenditureAdapter()
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        if (recyclerView != null) {
+            recyclerView.adapter = adapter
+            recyclerView.layoutManager = LinearLayoutManager(this)
+        }
 
         expenditureViewModel.allExpenditures.observe(this) { expenditure ->
             expenditure.let { adapter.submitList(it) }

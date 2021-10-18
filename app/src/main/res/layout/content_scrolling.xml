@@ -4,10 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="20dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".expenditure.ExpenditureActivity"
     tools:showIn="@layout/activity_expenditure">
 
-
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/expenditure_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/expenditure_item" />
 </androidx.core.widget.NestedScrollView>
