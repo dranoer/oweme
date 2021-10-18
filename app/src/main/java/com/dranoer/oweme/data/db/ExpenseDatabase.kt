@@ -30,6 +30,8 @@ abstract class ExpenseDatabase : RoomDatabase() {
                     expensedDao.deleteAll()
 
                     expensedDao.insertExpenditure(mockExpenditure[0])
+                    expensedDao.insertExpenditure(mockExpenditure[1])
+                    expensedDao.insertExpenditure(mockExpenditure[2])
                 }
             }
 

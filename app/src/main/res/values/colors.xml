@@ -11,4 +11,10 @@
     <color name="dark_lavender">#44497C</color>
     <color name="light_lavender">#A5A9BE</color>
     <color name="lavender">#866EE1</color>
+
+    <color name="navy_dark">#40487c</color>
+    <color name="navy_light">#6b7193</color>
+    <color name="sharp_green">#55c662</color>
+    <color name="sharp_red">#d63664</color>
+    <color name="light_gray">#abafbf</color>
 </resources>

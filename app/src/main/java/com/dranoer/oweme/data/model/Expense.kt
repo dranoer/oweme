@@ -28,5 +28,17 @@ val mockExpenditure = listOf(
         user = "Nazanin",
         paid = 200,
 //        expense = null
+    ),
+    Expenditure(
+        id = 200,
+        title = "two",
+        user = "Phoebe",
+        paid = 450,
+    ),
+    Expenditure(
+        id = 300,
+        title = "third third..",
+        user = "Nazanin",
+        paid = 1500,
     )
 )
