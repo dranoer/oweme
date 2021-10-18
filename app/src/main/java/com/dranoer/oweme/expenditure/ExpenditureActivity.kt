@@ -7,16 +7,14 @@ import androidx.navigation.navArgs
 import com.dranoer.oweme.ExpenseApplication
 import com.dranoer.oweme.R
 import com.dranoer.oweme.databinding.ActivityExpenditureBinding
-import com.dranoer.oweme.expenses.ExpenseViewModel
-import com.dranoer.oweme.expenses.ExpenseViewModelFactory
 
 class ExpenditureActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityExpenditureBinding
     val args: ExpenditureActivityArgs by navArgs()
 
-    private val expenseViewModel: ExpenseViewModel by viewModels {
-        ExpenseViewModelFactory((application as ExpenseApplication).repository)
+    private val expenditureViewModel: ExpenditureViewModel by viewModels {
+        ExpenditureViewModelFactory((application as ExpenseApplication).repository)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

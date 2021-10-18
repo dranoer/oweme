@@ -18,4 +18,15 @@ data class Expenditure(
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "user") val user: String,
     @ColumnInfo(name = "paid") val paid: Int,
+//    @ColumnInfo(name = "expense") val expense: Expense?,
+)
+
+val mockExpenditure = listOf(
+    Expenditure(
+        id = 100,
+        title = "expenditure test title",
+        user = "Nazanin",
+        paid = 200,
+//        expense = null
+    )
 )

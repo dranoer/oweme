@@ -1,6 +1,7 @@
 package com.dranoer.oweme.data.db
 
 import androidx.room.*
+import com.dranoer.oweme.data.model.Expenditure
 import com.dranoer.oweme.data.model.Expense
 import kotlinx.coroutines.flow.Flow
 
@@ -21,4 +22,15 @@ interface ExpenseDao {
 
     @Update
     suspend fun updateExpense(expense: Expense)
+
+    // Expenditure
+
+    @Query("SELECT * FROM expenditure_table WHERE title = :expenditureTitle")
+    fun getExpenditure(expenditureTitle: String): Expenditure
+
+    @Query("SELECT * FROM expenditure_table")
+    fun getExpenditures(): Flow<List<Expenditure>>
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertExpenditure(expenditure: Expenditure)
 }
