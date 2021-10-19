@@ -10,7 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dranoer.oweme.R
 import com.dranoer.oweme.data.model.Expense
 
-class ExpenseAdapter : ListAdapter<Expense, ExpenseAdapter.ExpenseViewHolder>(EXPENSS_COMPARATOR) {
+class ExpenseAdapter
+constructor(
+    private val expenseClickListener: ExpenseClickListener
+) : ListAdapter<Expense, ExpenseAdapter.ExpenseViewHolder>(EXPENSS_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseViewHolder {
         return ExpenseViewHolder.create(parent)
@@ -23,6 +26,10 @@ class ExpenseAdapter : ListAdapter<Expense, ExpenseAdapter.ExpenseViewHolder>(EX
             totalCost = current.totalCost.toString(),
             userCost = current.userCost.toString()
         )
+
+        holder.itemView.setOnClickListener {
+            expenseClickListener.onExpenseClicked(current)
+        }
     }
 
     class ExpenseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

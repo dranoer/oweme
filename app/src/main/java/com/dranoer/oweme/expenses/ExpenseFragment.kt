@@ -6,11 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dranoer.oweme.ExpenseApplication
+import com.dranoer.oweme.R
+import com.dranoer.oweme.data.model.Expense
 import com.dranoer.oweme.databinding.FragmentExpenseBinding
 
-class ExpenseFragment : Fragment() {
+class ExpenseFragment : Fragment(), ExpenseClickListener {
 
     private val expenseViewModel: ExpenseViewModel by viewModels {
         ExpenseViewModelFactory((requireActivity().application as ExpenseApplication).repository)
@@ -29,7 +32,7 @@ class ExpenseFragment : Fragment() {
         val root: View = binding.root
 
         val recyclerView = binding.recyclerview
-        val adapter = ExpenseAdapter()
+        val adapter = ExpenseAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
@@ -47,5 +50,12 @@ class ExpenseFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    override fun onExpenseClicked(expense: Expense) {
+        val navHost: Fragment =
+            requireActivity().supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)!!
+        val action = ExpenseFragmentDirections.actionAddExpenseToExpenditure(expense.title)
+        navHost.findNavController().navigate(action)
     }
 }

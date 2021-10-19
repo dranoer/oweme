@@ -38,7 +38,11 @@ class ExpenditureActivity : AppCompatActivity() {
             expenditure.let { adapter.submitList(it) }
         }
 
-        binding.fab.setOnClickListener { view ->
+        binding.fab.setOnClickListener {
+            AddExpenditureDialog().show(
+                supportFragmentManager.beginTransaction(),
+                "AddExpenditureDialog"
+            )
         }
     }
 }
