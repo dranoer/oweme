@@ -40,4 +40,9 @@ class ExpenseRepository(private val expenseDao: ExpenseDao) {
     suspend fun getExpenditure(expenditureTitle: String) {
         expenseDao.getExpenditure(expenditureTitle)
     }
+
+    @WorkerThread
+    suspend fun getExpendituresWithExpense() {
+        expenseDao.getExpendituresWithExpense()
+    }
 }
