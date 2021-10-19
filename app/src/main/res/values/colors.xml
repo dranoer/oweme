@@ -17,4 +17,5 @@
     <color name="sharp_green">#55c662</color>
     <color name="sharp_red">#d63664</color>
     <color name="light_gray">#abafbf</color>
+    <color name="extra_light_gray">#f6f6f6</color>
 </resources>
