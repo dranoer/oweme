@@ -21,6 +21,7 @@ class ExpenseFragment : Fragment(), ExpenseClickListener {
 
     private var _binding: FragmentExpenseBinding? = null
     private val binding get() = _binding!!
+    private lateinit var navHost: Fragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,6 +31,9 @@ class ExpenseFragment : Fragment(), ExpenseClickListener {
 
         _binding = FragmentExpenseBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        navHost =
+            requireActivity().supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)!!
 
         val recyclerView = binding.recyclerview
         val adapter = ExpenseAdapter(this)
@@ -44,6 +48,10 @@ class ExpenseFragment : Fragment(), ExpenseClickListener {
             AddExpenseDialog().show(requireActivity().supportFragmentManager, "AddExpenseDialog")
         }
 
+        binding.avatar.setOnClickListener {
+            val action = ExpenseFragmentDirections.actionExpenseToSetting()
+            navHost.findNavController().navigate(action)
+        }
         return root
     }
 
@@ -53,8 +61,8 @@ class ExpenseFragment : Fragment(), ExpenseClickListener {
     }
 
     override fun onExpenseClicked(expense: Expense) {
-        val navHost: Fragment =
-            requireActivity().supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)!!
+//        val navHost: Fragment =
+//            requireActivity().supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)!!
         val action = ExpenseFragmentDirections.actionAddExpenseToExpenditure(expense.title)
         navHost.findNavController().navigate(action)
     }
