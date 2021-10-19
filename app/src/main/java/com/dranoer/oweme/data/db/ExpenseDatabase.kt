@@ -7,7 +7,6 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.dranoer.oweme.data.model.Expenditure
 import com.dranoer.oweme.data.model.Expense
-import com.dranoer.oweme.data.model.mockExpenditure
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -28,10 +27,6 @@ abstract class ExpenseDatabase : RoomDatabase() {
                     var expensedDao = database.expenseDao()
 
                     expensedDao.deleteAll()
-
-                    for (i in 0..9) {
-                        expensedDao.insertExpenditure(mockExpenditure[i])
-                    }
                 }
             }
 
